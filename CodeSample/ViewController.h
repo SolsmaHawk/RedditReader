@@ -11,4 +11,6 @@
 
 @interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, DataReceiver>
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
 @end

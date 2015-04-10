@@ -12,6 +12,8 @@
 @interface DataLoader : NSObject
 
 - (id)dataLoaderWithDelegate:(id<DataReceiver>)delegate;
-- (void)getData;
+- (void)getDataAndupdateTableView:(UITableView *)table;
+@property NSString *searchTerm;
+@property NSArray *titlesAndThumbnails;
 
 @end
