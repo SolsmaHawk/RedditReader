@@ -10,10 +10,10 @@
 		319F07A91AD789CB003865DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F07A81AD789CB003865DE /* CoreData.framework */; };
 		319F07AC1AD78A7A003865DE /* CodeSampleDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 319F07AA1AD78A7A003865DE /* CodeSampleDataModel.xcdatamodeld */; };
 		319F07F91AD85E63003865DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F01AD85E63003865DE /* AppDelegate.m */; };
-		319F07FA1AD85E63003865DE /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F21AD85E63003865DE /* CoreDataStack.m */; };
 		319F07FB1AD85E63003865DE /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F41AD85E63003865DE /* DataLoader.m */; };
 		319F07FC1AD85E63003865DE /* GFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F61AD85E63003865DE /* GFTableViewCell.m */; };
 		319F07FD1AD85E63003865DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F81AD85E63003865DE /* ViewController.m */; };
+		319F07FF1AD85FA6003865DE /* MagicalRecord in Resources */ = {isa = PBXBuildFile; fileRef = 319F07FE1AD85FA6003865DE /* MagicalRecord */; };
 		E063520C19056E63004932A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E063520B19056E63004932A4 /* Foundation.framework */; };
 		E063520E19056E63004932A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E063520D19056E63004932A4 /* CoreGraphics.framework */; };
 		E063521019056E63004932A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E063520F19056E63004932A4 /* UIKit.framework */; };
@@ -44,14 +44,13 @@
 		319F07AB1AD78A7A003865DE /* CodeSampleDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodeSampleDataModel.xcdatamodel; sourceTree = "<group>"; };
 		319F07EF1AD85E63003865DE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		319F07F01AD85E63003865DE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		319F07F11AD85E63003865DE /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
-		319F07F21AD85E63003865DE /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		319F07F31AD85E63003865DE /* DataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoader.h; sourceTree = "<group>"; };
 		319F07F41AD85E63003865DE /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
 		319F07F51AD85E63003865DE /* GFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFTableViewCell.h; sourceTree = "<group>"; };
 		319F07F61AD85E63003865DE /* GFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFTableViewCell.m; sourceTree = "<group>"; };
 		319F07F71AD85E63003865DE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		319F07F81AD85E63003865DE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		319F07FE1AD85FA6003865DE /* MagicalRecord */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MagicalRecord; sourceTree = "<group>"; };
 		E063520819056E63004932A4 /* CodeSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E063520B19056E63004932A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E063520D19056E63004932A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,10 +130,9 @@
 		E063521119056E63004932A4 /* CodeSample */ = {
 			isa = PBXGroup;
 			children = (
+				319F07FE1AD85FA6003865DE /* MagicalRecord */,
 				319F07EF1AD85E63003865DE /* AppDelegate.h */,
 				319F07F01AD85E63003865DE /* AppDelegate.m */,
-				319F07F11AD85E63003865DE /* CoreDataStack.h */,
-				319F07F21AD85E63003865DE /* CoreDataStack.m */,
 				319F07F31AD85E63003865DE /* DataLoader.h */,
 				319F07F41AD85E63003865DE /* DataLoader.m */,
 				319F07F51AD85E63003865DE /* GFTableViewCell.h */,
@@ -265,6 +263,7 @@
 			files = (
 				E063522419056E63004932A4 /* Images.xcassets in Resources */,
 				E063521619056E63004932A4 /* InfoPlist.strings in Resources */,
+				319F07FF1AD85FA6003865DE /* MagicalRecord in Resources */,
 				E06352921906C3C0004932A4 /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +288,6 @@
 				319F07AC1AD78A7A003865DE /* CodeSampleDataModel.xcdatamodeld in Sources */,
 				E06352851905A5FF004932A4 /* main.m in Sources */,
 				319F07F91AD85E63003865DE /* AppDelegate.m in Sources */,
-				319F07FA1AD85E63003865DE /* CoreDataStack.m in Sources */,
 				319F07FC1AD85E63003865DE /* GFTableViewCell.m in Sources */,
 				319F07FB1AD85E63003865DE /* DataLoader.m in Sources */,
 			);
@@ -365,7 +363,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$SRCROOT/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -397,7 +400,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$SRCROOT/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

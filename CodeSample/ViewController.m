@@ -8,9 +8,8 @@
 #import "ViewController.h"
 #import "DataLoader.h"
 #import "GFTableViewCell.h"
-#import "CoreDataStack.h"
-#import <CoreData/CoreData.h>
-//#import "MagicalRecord.h"
+
+
 
 
 @interface ViewController ()
@@ -20,7 +19,7 @@
 @property NSUInteger tableCount;
 @property (strong, nonatomic) IBOutlet UITextField *searchBar;
 @property NSMutableArray *tableDataSource;
-@property CoreDataStack *stack;
+
 
 @end
 
