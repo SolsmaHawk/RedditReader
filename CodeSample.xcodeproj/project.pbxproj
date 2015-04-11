@@ -23,6 +23,7 @@
 		319F07FB1AD85E63003865DE /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F41AD85E63003865DE /* DataLoader.m */; };
 		319F07FC1AD85E63003865DE /* GFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F61AD85E63003865DE /* GFTableViewCell.m */; };
 		319F07FD1AD85E63003865DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F07F81AD85E63003865DE /* ViewController.m */; };
+		31F1F43D1AD96F540023EB87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F1F43C1AD96F540023EB87 /* Main.storyboard */; };
 		E063520C19056E63004932A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E063520B19056E63004932A4 /* Foundation.framework */; };
 		E063520E19056E63004932A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E063520D19056E63004932A4 /* CoreGraphics.framework */; };
 		E063521019056E63004932A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E063520F19056E63004932A4 /* UIKit.framework */; };
@@ -81,6 +82,7 @@
 		319F07F61AD85E63003865DE /* GFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFTableViewCell.m; sourceTree = "<group>"; };
 		319F07F71AD85E63003865DE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		319F07F81AD85E63003865DE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31F1F43C1AD96F540023EB87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E063520819056E63004932A4 /* CodeSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E063520B19056E63004932A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E063520D19056E63004932A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -206,6 +208,7 @@
 				319F07F61AD85E63003865DE /* GFTableViewCell.m */,
 				319F07F71AD85E63003865DE /* ViewController.h */,
 				319F07F81AD85E63003865DE /* ViewController.m */,
+				31F1F43C1AD96F540023EB87 /* Main.storyboard */,
 				319F07AA1AD78A7A003865DE /* CodeSampleDataModel.xcdatamodeld */,
 				E063522319056E63004932A4 /* Images.xcassets */,
 				E063521219056E63004932A4 /* Supporting Files */,
@@ -331,6 +334,7 @@
 				E063522419056E63004932A4 /* Images.xcassets in Resources */,
 				E063521619056E63004932A4 /* InfoPlist.strings in Resources */,
 				E06352921906C3C0004932A4 /* README.rtf in Resources */,
+				31F1F43D1AD96F540023EB87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +499,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CodeSample/CodeSample-Prefix.pch";
 				INFOPLIST_FILE = "CodeSample/CodeSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -509,7 +513,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CodeSample/CodeSample-Prefix.pch";
 				INFOPLIST_FILE = "CodeSample/CodeSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

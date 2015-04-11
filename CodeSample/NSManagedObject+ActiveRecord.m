@@ -66,7 +66,7 @@
 + (instancetype)findOrCreate:(NSDictionary *)properties inContext:(NSManagedObjectContext *)context {
     NSDictionary *transformed = [[self class] transformProperties:properties withObject:nil context:context];
 
-    NSManagedObject *existing = [self where:transformed inContext:context].first;
+    NSManagedObject *existing = [self where:transformed inContext:context].firstObject;
     return existing ?: [self create:transformed inContext:context];
 }
 
@@ -80,7 +80,7 @@
 }
 
 + (instancetype)find:(id)condition inContext:(NSManagedObjectContext *)context {
-    return [self where:condition inContext:context limit:@1].first;
+    return [self where:condition inContext:context limit:@1].firstObject;
 }
 
 + (NSArray *)where:(id)condition, ... {
@@ -262,8 +262,8 @@
 }
 
 + (NSSortDescriptor *)sortDescriptorFromDictionary:(NSDictionary *)dict {
-    BOOL isAscending = ![[dict.allValues.first uppercaseString] isEqualToString:@"DESC"];
-    return [NSSortDescriptor sortDescriptorWithKey:dict.allKeys.first
+    BOOL isAscending = ![[dict.allValues.firstObject uppercaseString] isEqualToString:@"DESC"];
+    return [NSSortDescriptor sortDescriptorWithKey:dict.allKeys.firstObject
                                          ascending:isAscending];
 }
 
