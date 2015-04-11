@@ -34,14 +34,11 @@
 -(void)handleCoreDataCache
 {
     [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
-    
-    NSArray *entries = [TableEntry all];
-    
     #ifdef COREDATADEBUGGING
-    NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
+    NSLog(@"Here are the number entries: %lu",(unsigned long)[[TableEntry all] count]);
     #endif
     
-    for(TableEntry *entry in entries)
+    for(TableEntry *entry in [TableEntry all])
     {
         [entry delete];
     }
@@ -52,17 +49,14 @@
 -(void)loadFromCacheToTable:(UITableView *)table
 {
     [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
-    
-    NSArray *entries = [TableEntry all];
-    
     #ifdef COREDATADEBUGGING
-    NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
+    NSLog(@"Here are the number entries: %lu",(unsigned long)[[TableEntry all] count]);
     #endif
     
     self.titlesAndThumbnails = [[NSArray alloc]init];
     
     NSMutableArray *titlesAndThumbnails = [[NSMutableArray alloc]init];
-    for(TableEntry *entry in entries)
+    for(TableEntry *entry in [TableEntry all])
     {
         //NSLog(@"%@",entry.title);
         NSArray *titleAndThumbnail = [[NSArray alloc]init];
@@ -119,10 +113,12 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.reddit.com/search.json?q=%@", searchTerm]]];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    [self handleCoreDataCache];
     dispatch_async(queue,
     ^{
-        [self handleCoreDataCache];
-        NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        NSError        *error = nil;
+        NSURLResponse  *response = nil;
+        NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         dispatch_async(dispatch_get_main_queue(),
         ^{
             if(NSClassFromString(@"NSJSONSerialization"))
