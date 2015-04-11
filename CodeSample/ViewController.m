@@ -16,8 +16,14 @@
 @property NSUInteger tableCount;
 @property (strong, nonatomic) IBOutlet UITextField *searchBar;
 @property NSMutableArray *tableDataSource;
+
 @end
 
+/*
+@interface UITextField() <UITextFieldDelegate>
+
+@end
+*/
 
 @implementation ViewController
 @synthesize managedObjectContext = _managedObjectContext;
