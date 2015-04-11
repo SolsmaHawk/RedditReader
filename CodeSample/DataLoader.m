@@ -98,7 +98,7 @@
 
 #pragma mark Fetch Data and Update Table Async Methods
 
-- (void)getDataAndupdateTableView:(UITableView *)table onStartup:(BOOL)startup
+- (void)getDataAndupdateTableView:(UITableView *)table onStartup:(BOOL)startup withActivityIndicator:(UIActivityIndicatorView *)indicator
 {
     if(startup)
     {
@@ -107,6 +107,7 @@
     
     else
     {
+    indicator.hidden=NO;
     self.titlesAndThumbnails = [[NSArray alloc]init];
     NSString *searchTerm = self.searchTerm;
     
@@ -121,6 +122,7 @@
         NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         dispatch_async(dispatch_get_main_queue(),
         ^{
+            indicator.hidden=YES;
             if(NSClassFromString(@"NSJSONSerialization"))
             {
                 NSError *error = nil;

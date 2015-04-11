@@ -14,6 +14,7 @@
 @property(nonatomic, strong) NSMutableArray *tableData;
 @property(nonatomic, strong) DataLoader *data;
 @property NSUInteger tableCount;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *searchActivityIndicator;
 @property (strong, nonatomic) IBOutlet UITextField *searchBar;
 @property NSMutableArray *tableDataSource;
 @end
@@ -24,10 +25,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.searchActivityIndicator.hidden=YES;
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self refreshDataOnStartup:YES];
+    [self refreshDataOnStartup:YES withActivityIndicator:self.searchActivityIndicator];
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,12 +109,12 @@
     });
 }
 
-- (void)refreshDataOnStartup:(BOOL)startup
+- (void)refreshDataOnStartup:(BOOL)startup withActivityIndicator:(UIActivityIndicatorView *)indicator
 {
     self.data = [[DataLoader alloc] dataLoaderWithDelegate:self];
     NSString *searchTextConcatonatedWithUnderscores = [self.searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     self.data.searchTerm=searchTextConcatonatedWithUnderscores;
-    [self.data getDataAndupdateTableView:self.tableView onStartup:startup];
+    [self.data getDataAndupdateTableView:self.tableView onStartup:startup withActivityIndicator:self.searchActivityIndicator];
     
 }
 
@@ -126,7 +128,7 @@
     }
     else
     {
-        [self refreshDataOnStartup:NO];
+        [self refreshDataOnStartup:NO withActivityIndicator:self.searchActivityIndicator];
     }
 
 
@@ -137,7 +139,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    [self refreshDataOnStartup:NO];
+    [self refreshDataOnStartup:NO withActivityIndicator:self.searchActivityIndicator];
     return YES;
 }
 
