@@ -7,9 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DataReceiver.h"
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, DataReceiver, UITextFieldDelegate>
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
