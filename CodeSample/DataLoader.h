@@ -12,7 +12,7 @@
 @interface DataLoader : NSObject
 
 - (id)dataLoaderWithDelegate:(id<DataReceiver>)delegate;
-- (void)getDataAndupdateTableView:(UITableView *)table;
+- (void)getDataAndupdateTableView:(UITableView *)table onStartup:(BOOL)startup;
 @property NSString *searchTerm;
 @property NSArray *titlesAndThumbnails;
 

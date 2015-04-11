@@ -23,6 +23,8 @@
 
 @end
 
+static BOOL startup = YES;
+
 @implementation ViewController
 @synthesize managedObjectContext = _managedObjectContext;
 
@@ -45,6 +47,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self refreshDataOnStartup:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,12 +112,12 @@
 
 #pragma mark Helper Methods
 
-- (void)refreshData
+- (void)refreshDataOnStartup:(BOOL)startup
 {
     self.data = [[DataLoader alloc] dataLoaderWithDelegate:self];
     NSString *searchTextConcatonatedWithUnderscores = [self.searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     self.data.searchTerm=searchTextConcatonatedWithUnderscores;
-    [self.data getDataAndupdateTableView:self.tableView];
+    [self.data getDataAndupdateTableView:self.tableView onStartup:startup];
     
     
     //[self.tableView reloadData];
@@ -131,7 +134,7 @@
     }
     else
     {
-        [self refreshData];
+        [self refreshDataOnStartup:NO];
     }
 
 
@@ -143,7 +146,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    [self refreshData];
+    [self refreshDataOnStartup:NO];
     return YES;
 }
 

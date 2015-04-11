@@ -29,7 +29,57 @@
     return loader;
 }
 
-- (void)getDataAndupdateTableView:(UITableView *)table
+-(void)handleCoreDataCache
+{
+    [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
+    
+    NSArray *entries = [TableEntry all];
+    
+    NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
+    
+    
+    for(TableEntry *entry in entries)
+    {
+        [entry delete];
+    }
+    
+
+}
+
+-(void)loadFromCacheToTable:(UITableView *)table
+{
+    [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
+    
+    NSArray *entries = [TableEntry all];
+    
+    NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
+    
+    self.titlesAndThumbnails = [[NSArray alloc]init];
+    
+    NSMutableArray *titlesAndThumbnails = [[NSMutableArray alloc]init];
+    for(TableEntry *entry in entries)
+    {
+        //NSLog(@"%@",entry.title);
+        NSArray *titleAndThumbnail = [[NSArray alloc]init];
+        if(entry.thumbnail==NULL)
+        {
+            titleAndThumbnail=@[entry.title];
+        }
+        else
+        {
+            titleAndThumbnail=@[entry.title,entry.thumbnail];
+        }
+        [titlesAndThumbnails addObject:titleAndThumbnail];
+        [entry delete];
+    }
+    
+    self.titlesAndThumbnails=titlesAndThumbnails;
+    [table reloadData];
+
+
+}
+
+- (void)getDataAndupdateTableView:(UITableView *)table onStartup:(BOOL)startup
 {
     // TODO: Add a parameter that is entered in a search field at the top of the table view. - complete
     // You will need to add this search field, grab the search value, and use this value as the search term. - complete
@@ -39,14 +89,17 @@
     newContext.persistentStoreCoordinator = [[CoreDataManager sharedManager] persistentStoreCoordinator];
     
     */
-    [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
-    
-    NSArray *entries = [TableEntry all];
-    for(TableEntry *entry in entries)
+    if(startup)
     {
-    [entry delete];
+       [self loadFromCacheToTable:table];
     }
-    NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
+    
+    else
+    {
+    
+    
+
+    
     
     self.titlesAndThumbnails = [[NSArray alloc]init];
     NSString *searchTerm = self.searchTerm; // default search term
@@ -56,6 +109,7 @@
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     dispatch_async(queue,
     ^{
+        [self handleCoreDataCache];
         NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         dispatch_async(dispatch_get_main_queue(),
         ^{
@@ -102,40 +156,20 @@
                             // Save to Core Data Cache
                             TableEntry *newEntry = [TableEntry create];
                             newEntry.title = title;
-                           // newEntry.thumbnail = @"self";
                             [newEntry save];
-                            /*
-                            NSDictionary *JSON = @{
-                                                   @"title": title,
-                                                   @"thumbnail": @"",};
-                            TableEntry *newEntry = [TableEntry create:JSON inContext:newContext];
-                             */
-                           // TableEntry *newEntry = [TableEntry create:JSON inContext:nil];
-                            /*
-                            TableEntry *dataStore = [TableEntry create];
-                            dataStore.title=title;
-                            [dataStore save];
-                             
-                            [TableEntry create:@{
-                                             @"title" : title
-                                             }];
-                             */
+       
                             
                         }
                         else
                         {
                             titleAndThumbnail=@[title,thumbnail];
                             
+                            // Save to Core Data Cache
                             TableEntry *newEntry = [TableEntry create];
                             newEntry.title = title;
                             newEntry.thumbnail=thumbnail;
                             [newEntry save];
-                            /*
-                            TableEntry *dataStore = [TableEntry create];
-                            dataStore.title=title;
-                            dataStore.thumbnail=thumbnail;
-                            [dataStore save];
-                             */
+                     
                         }
                         [titlesAndThumbnails addObject:titleAndThumbnail];
                         
@@ -155,7 +189,7 @@
     }
     });
     });
-    
+    }
     
   
 }
