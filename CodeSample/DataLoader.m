@@ -7,6 +7,9 @@
 
 #import "DataLoader.h"
 #import "LoadCounter.h"
+#import <CoreData/CoreData.h>
+#import "ObjectiveRecord.h"
+#import "TableEntry.h"
 
 @interface DataLoader ()
 @property(nonatomic, strong) id<DataReceiver> loadDelegate;
@@ -30,6 +33,20 @@
 {
     // TODO: Add a parameter that is entered in a search field at the top of the table view. - complete
     // You will need to add this search field, grab the search value, and use this value as the search term. - complete
+    /*
+  NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"[CodeSampleDataModel]" withExtension:@"momd"];
+    NSManagedObjectContext *newContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    newContext.persistentStoreCoordinator = [[CoreDataManager sharedManager] persistentStoreCoordinator];
+    
+    */
+    [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
+    
+    NSArray *entries = [TableEntry all];
+    for(TableEntry *entry in entries)
+    {
+    [entry delete];
+    }
+    NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
     
     self.titlesAndThumbnails = [[NSArray alloc]init];
     NSString *searchTerm = self.searchTerm; // default search term
@@ -81,14 +98,51 @@
                             #ifdef DEBUGGING
                             NSLog(@"No thumbnail detected");
                             #endif
+                            
+                            // Save to Core Data Cache
+                            TableEntry *newEntry = [TableEntry create];
+                            newEntry.title = title;
+                           // newEntry.thumbnail = @"self";
+                            [newEntry save];
+                            /*
+                            NSDictionary *JSON = @{
+                                                   @"title": title,
+                                                   @"thumbnail": @"",};
+                            TableEntry *newEntry = [TableEntry create:JSON inContext:newContext];
+                             */
+                           // TableEntry *newEntry = [TableEntry create:JSON inContext:nil];
+                            /*
+                            TableEntry *dataStore = [TableEntry create];
+                            dataStore.title=title;
+                            [dataStore save];
+                             
+                            [TableEntry create:@{
+                                             @"title" : title
+                                             }];
+                             */
+                            
                         }
                         else
                         {
                             titleAndThumbnail=@[title,thumbnail];
+                            
+                            TableEntry *newEntry = [TableEntry create];
+                            newEntry.title = title;
+                            newEntry.thumbnail=thumbnail;
+                            [newEntry save];
+                            /*
+                            TableEntry *dataStore = [TableEntry create];
+                            dataStore.title=title;
+                            dataStore.thumbnail=thumbnail;
+                            [dataStore save];
+                             */
                         }
                         [titlesAndThumbnails addObject:titleAndThumbnail];
                         
                     }
+                
+                    
+             
             self.titlesAndThumbnails=titlesAndThumbnails;
             [table reloadData];
 
@@ -101,6 +155,8 @@
     }
     });
     });
+    
+    
   
 }
 

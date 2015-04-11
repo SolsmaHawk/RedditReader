@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import <CoreData+MagicalRecord.h>
+
 
 @implementation AppDelegate
 
@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
- // [MagicalRecord setupCoreDataStackWithStoreNamed:@"CodeSampleDataModel.sqlite"];
+ //[MagicalRecord setupCoreDataStackWithStoreNamed:@"CodeSampleDataModel.sqlite"];
     return YES;
 }
 							
