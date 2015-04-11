@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import "DataLoader.h"
 #import "GFTableViewCell.h"
-
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 @interface ViewController ()
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray *tableData;
@@ -68,7 +68,20 @@
                 newCell.loadingIndicator.hidden=NO;
                 NSString *ImageURL = self.data.titlesAndThumbnails[indexPath.row][1];
                 NSURL *imagePath = [[NSURL alloc]initWithString:ImageURL];
-                [self loadFromURL:imagePath toImageView:newCell.thumbnailImage withIndicator:newCell.loadingIndicator];
+                dispatch_async(kBgQueue, ^{
+                    NSData *imgData = [NSData dataWithContentsOfURL:imagePath];
+                    if (imgData) {
+                        UIImage *image = [UIImage imageWithData:imgData];
+                        if (image) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                newCell.loadingIndicator.hidden=YES;
+                                GFTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                                if (updateCell)
+                                    updateCell.thumbnailImage.image = image;
+                            });
+                        }
+                    }
+                });
             }
     }
 
