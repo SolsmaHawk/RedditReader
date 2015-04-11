@@ -17,7 +17,7 @@
 @end
 
 //#define DEBUGGING
-
+//#define COREDATADEBUGGING
 
 @implementation DataLoader
 
@@ -92,7 +92,7 @@
     else
     {
     self.titlesAndThumbnails = [[NSArray alloc]init];
-    NSString *searchTerm = self.searchTerm; // default search term
+    NSString *searchTerm = self.searchTerm;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.reddit.com/search.json?q=%@", searchTerm]]];
     
@@ -117,71 +117,84 @@
     
                 if([object isKindOfClass:[NSDictionary class]])
                 {
-                    NSDictionary *results = object;
-                    NSDictionary *dataNew=[results valueForKey:@"data"];
-                    NSArray *dataNew2=[dataNew valueForKey:@"children"];
-                    [self.loadDelegate updateCount:dataNew2.count];
-                    [self.loadDelegate receivedData:dataNew2];
-                    NSMutableArray *titlesAndThumbnails = [[NSMutableArray alloc]init];
-                    for(int i=0; i< [dataNew2 count]; i++)
-                    {
-                        NSDictionary *temp =dataNew2[i];
-                        NSDictionary *temp2 = [temp objectForKey:@"data"];
-                        #ifdef DEBUGGING
-                        NSLog(@"\n\n Title:%@\n\n",[temp2 objectForKey:@"title"]);
-                        #endif
-                        NSString *title = [temp2 objectForKey:@"title"];
-                        #ifdef DEBUGGING
-                        NSLog(@"\n\n Thumbnail:%@\n\n",[temp2 objectForKey:@"thumbnail"]);
-                        #endif
-                        NSString *thumbnail = [temp2 objectForKey:@"thumbnail"];
-                        NSArray *titleAndThumbnail = [[NSArray alloc]init];
-                        if([thumbnail isEqualToString:@""] || [thumbnail isEqualToString:@"self"]) // no thumbnail
-                        {
-                            titleAndThumbnail=@[title];
-                            #ifdef DEBUGGING
-                            NSLog(@"No thumbnail detected");
-                            #endif
-                            
-                            // Save to Core Data Cache
-                            TableEntry *newEntry = [TableEntry create];
-                            newEntry.title = title;
-                            [newEntry save];
-       
-                            
-                        }
-                        else
-                        {
-                            titleAndThumbnail=@[title,thumbnail];
-                            
-                            // Save to Core Data Cache
-                            TableEntry *newEntry = [TableEntry create];
-                            newEntry.title = title;
-                            newEntry.thumbnail=thumbnail;
-                            [newEntry save];
-                     
-                        }
-                        [titlesAndThumbnails addObject:titleAndThumbnail];
-                        
-                    }
-                
-                    
-             
-            self.titlesAndThumbnails=titlesAndThumbnails;
-            [table reloadData];
+                    NSMutableArray *parsedResults = [self parseResults:object];
+                    self.titlesAndThumbnails=parsedResults;
+                    [table reloadData];
+                }
+                else
+                {
+                    NSLog(@"JSON is in array form");
 
+                }
+            }
+        });
+        });
+    }
+    
+}
+
+-(NSMutableArray *)parseResults:(NSDictionary *)dictionary
+{
+    NSDictionary *dataNew=[dictionary valueForKey:@"data"];
+    NSArray *children=[dataNew valueForKey:@"children"];
+    [self.loadDelegate updateCount:children.count];
+    [self.loadDelegate receivedData:children];
+    NSMutableArray *titlesAndThumbnails = [[NSMutableArray alloc]init];
+    for(int i=0; i< [children count]; i++)
+    {
+        NSDictionary *results =children[i];
+        NSDictionary *nestedResults = [results objectForKey:@"data"];
+        #ifdef DEBUGGING
+        NSLog(@"\n\n Title:%@\n\n",[nestedResults objectForKey:@"title"]);
+        #endif
+        NSString *title = [nestedResults objectForKey:@"title"];
+        #ifdef DEBUGGING
+        NSLog(@"\n\n Thumbnail:%@\n\n",[temp2 objectForKey:@"thumbnail"]);
+        #endif
+        NSString *thumbnail = [nestedResults objectForKey:@"thumbnail"];
+        NSArray *titleAndThumbnail = [[NSArray alloc]init];
+        if([thumbnail isEqualToString:@""] || [thumbnail isEqualToString:@"self"]) // no thumbnail
+        {
+            titleAndThumbnail=@[title];
+            #ifdef DEBUGGING
+            NSLog(@"No thumbnail detected");
+            #endif
+            
+            // Save to Core Data Cache
+           [self saveTitleToCache:title withThumbnail:NULL];
+            
+            
         }
         else
         {
-            NSLog(@"JSON is in array form");
-
+            titleAndThumbnail=@[title,thumbnail];
+            
+            // Save to Core Data Cache
+            [self saveTitleToCache:title withThumbnail:thumbnail];
+            
         }
+        [titlesAndThumbnails addObject:titleAndThumbnail];
+}
+    return titlesAndThumbnails;
+}
+
+
+-(void)saveTitleToCache:(NSString *)title withThumbnail:(NSString *)thumbnail
+{
+    if(thumbnail==NULL)
+    {
+        TableEntry *newEntry = [TableEntry create];
+        newEntry.title = title;
+        [newEntry save];
     }
-    });
-    });
+    else
+    {
+        TableEntry *newEntry = [TableEntry create];
+        newEntry.title = title;
+        newEntry.thumbnail=thumbnail;
+        [newEntry save];
     }
-    
-  
+
 }
 
 @end
