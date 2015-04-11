@@ -29,14 +29,17 @@
     return loader;
 }
 
+#pragma mark Core Data Methods
+
 -(void)handleCoreDataCache
 {
     [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
     
     NSArray *entries = [TableEntry all];
     
+    #ifdef COREDATADEBUGGING
     NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
-    
+    #endif
     
     for(TableEntry *entry in entries)
     {
@@ -52,7 +55,9 @@
     
     NSArray *entries = [TableEntry all];
     
+    #ifdef COREDATADEBUGGING
     NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
+    #endif
     
     self.titlesAndThumbnails = [[NSArray alloc]init];
     
@@ -79,11 +84,28 @@
 
 }
 
+-(void)saveTitleToCache:(NSString *)title withThumbnail:(NSString *)thumbnail
+{
+    if(thumbnail==NULL)
+    {
+        TableEntry *newEntry = [TableEntry create];
+        newEntry.title = title;
+        [newEntry save];
+    }
+    else
+    {
+        TableEntry *newEntry = [TableEntry create];
+        newEntry.title = title;
+        newEntry.thumbnail=thumbnail;
+        [newEntry save];
+    }
+    
+}
+
+#pragma mark Fetch Data and Update Table Async Methods
+
 - (void)getDataAndupdateTableView:(UITableView *)table onStartup:(BOOL)startup
 {
-    // TODO: Add a parameter that is entered in a search field at the top of the table view. - complete
-    // You will need to add this search field, grab the search value, and use this value as the search term. - complete
-
     if(startup)
     {
        [self loadFromCacheToTable:table];
@@ -176,25 +198,6 @@
         [titlesAndThumbnails addObject:titleAndThumbnail];
 }
     return titlesAndThumbnails;
-}
-
-
--(void)saveTitleToCache:(NSString *)title withThumbnail:(NSString *)thumbnail
-{
-    if(thumbnail==NULL)
-    {
-        TableEntry *newEntry = [TableEntry create];
-        newEntry.title = title;
-        [newEntry save];
-    }
-    else
-    {
-        TableEntry *newEntry = [TableEntry create];
-        newEntry.title = title;
-        newEntry.thumbnail=thumbnail;
-        [newEntry save];
-    }
-
 }
 
 @end
