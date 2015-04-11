@@ -1,7 +1,7 @@
 //
 //  ViewController.h
 //  CodeSample
-//
+//  Edited by: John Solsma
 //  Copyright (c) 2014 Golden Frog, Inc. All rights reserved.
 //
 
@@ -10,7 +10,5 @@
 #import "DataReceiver.h"
 
 @interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, DataReceiver, UITextFieldDelegate>
-
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
