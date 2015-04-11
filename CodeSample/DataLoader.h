@@ -7,10 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DataReceiver.h"
 
 @interface DataLoader : NSObject
 
-
+- (id)dataLoaderWithDelegate:(id<DataReceiver>)delegate;
 - (void)getDataAndupdateTableView:(UITableView *)table onStartup:(BOOL)startup;
 @property NSString *searchTerm;
 @property NSArray *titlesAndThumbnails;

@@ -110,6 +110,7 @@
 
 - (void)refreshDataOnStartup:(BOOL)startup
 {
+    self.data = [[DataLoader alloc] dataLoaderWithDelegate:self];
     NSString *searchTextConcatonatedWithUnderscores = [self.searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     self.data.searchTerm=searchTextConcatonatedWithUnderscores;
     [self.data getDataAndupdateTableView:self.tableView onStartup:startup];
@@ -141,7 +142,15 @@
     return YES;
 }
 
-
+-(void)receivedData:(NSDictionary *)data
+{
+    for (NSDictionary *dict in data)
+    {
+        [self.tableData addObject:dict[@"data"][@"title"]];
+    }
+    
+    [self.tableView reloadData];
+}
 
 -(void)updateCount:(NSUInteger)newCount
 {

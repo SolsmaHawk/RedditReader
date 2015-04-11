@@ -97,7 +97,9 @@
 		E063523619056E63004932A4 /* CodeSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeSampleTests.m; sourceTree = "<group>"; };
 		E06352841905A5FF004932A4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E06352861905A60D004932A4 /* CodeSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CodeSample-Prefix.pch"; path = "CodeSample/CodeSample-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		E06352871906BB8C004932A4 /* LoadCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadCounter.h; path = CodeSample/LoadCounter.h; sourceTree = "<group>"; };
 		E06352911906C3C0004932A4 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = SOURCE_ROOT; };
+		E06352941906D89E004932A4 /* DataReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataReceiver.h; path = CodeSample/DataReceiver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E063521119056E63004932A4 /* CodeSample */,
+				E06352881906BB9A004932A4 /* Protocols */,
 				E063523019056E63004932A4 /* CodeSampleTests */,
 				E063520A19056E63004932A4 /* Frameworks */,
 				E063520919056E63004932A4 /* Products */,
@@ -241,6 +244,15 @@
 				E063523319056E63004932A4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E06352881906BB9A004932A4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E06352871906BB8C004932A4 /* LoadCounter.h */,
+				E06352941906D89E004932A4 /* DataReceiver.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

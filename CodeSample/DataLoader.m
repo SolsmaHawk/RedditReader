@@ -6,12 +6,13 @@
 //
 
 #import "DataLoader.h"
+#import "LoadCounter.h"
 #import <CoreData/CoreData.h>
 #import "ObjectiveRecord.h"
 #import "TableEntry.h"
 
 @interface DataLoader ()
-
+@property(nonatomic, strong) id<DataReceiver> loadDelegate;
 @property(nonatomic, strong) NSDictionary *data;
 @end
 
@@ -20,18 +21,27 @@
 
 @implementation DataLoader
 
+- (id)dataLoaderWithDelegate:(id<DataReceiver>)delegate
+{
+    DataLoader *loader = [[DataLoader alloc] init];
+    loader.loadDelegate = delegate;
+    
+    return loader;
+}
 
 #pragma mark Core Data Methods
 
 -(void)handleCoreDataCache
 {
     [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
-
+    
+    NSArray *entries = [TableEntry all];
+    
     #ifdef COREDATADEBUGGING
     NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
     #endif
     
-    for(TableEntry *entry in [TableEntry all])
+    for(TableEntry *entry in entries)
     {
         [entry delete];
     }
@@ -42,15 +52,17 @@
 -(void)loadFromCacheToTable:(UITableView *)table
 {
     [CoreDataManager sharedManager].modelName = @"CodeSampleDataModel";
-
+    
+    NSArray *entries = [TableEntry all];
+    
     #ifdef COREDATADEBUGGING
-    NSLog(@"Here are the number entries: %lu",(unsigned long)[[TableEntry all] count]);
+    NSLog(@"Here are the number entries: %lu",(unsigned long)[entries count]);
     #endif
     
     self.titlesAndThumbnails = [[NSArray alloc]init];
     
     NSMutableArray *titlesAndThumbnails = [[NSMutableArray alloc]init];
-    for(TableEntry *entry in [TableEntry all])
+    for(TableEntry *entry in entries)
     {
         //NSLog(@"%@",entry.title);
         NSArray *titleAndThumbnail = [[NSArray alloc]init];
@@ -147,6 +159,8 @@
 {
     NSDictionary *dataNew=[dictionary valueForKey:@"data"];
     NSArray *children=[dataNew valueForKey:@"children"];
+    [self.loadDelegate updateCount:children.count];
+    [self.loadDelegate receivedData:children];
     NSMutableArray *titlesAndThumbnails = [[NSMutableArray alloc]init];
     for(int i=0; i< [children count]; i++)
     {
