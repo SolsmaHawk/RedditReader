@@ -83,12 +83,7 @@
 {
     // TODO: Add a parameter that is entered in a search field at the top of the table view. - complete
     // You will need to add this search field, grab the search value, and use this value as the search term. - complete
-    /*
-  NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"[CodeSampleDataModel]" withExtension:@"momd"];
-    NSManagedObjectContext *newContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    newContext.persistentStoreCoordinator = [[CoreDataManager sharedManager] persistentStoreCoordinator];
-    
-    */
+
     if(startup)
     {
        [self loadFromCacheToTable:table];
@@ -96,11 +91,6 @@
     
     else
     {
-    
-    
-
-    
-    
     self.titlesAndThumbnails = [[NSArray alloc]init];
     NSString *searchTerm = self.searchTerm; // default search term
     

@@ -1,6 +1,6 @@
 //
 //  TableEntry.h
-//  SampleProject
+// 
 //
 //  Created by John Solsma on 4/10/15.
 //

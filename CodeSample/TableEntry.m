@@ -1,8 +1,8 @@
 //
-//  Car.m
-//  SampleProject
+//  TableEntry.m
+//  
 //
-//  Created by Marin Usalj on 12/3/13.
+//  Created by John Solsma on 4/10/15.
 //
 //
 

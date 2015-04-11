@@ -9,9 +9,6 @@
 #import "DataLoader.h"
 #import "GFTableViewCell.h"
 
-
-
-
 @interface ViewController ()
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray *tableData;
@@ -20,10 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *searchBar;
 @property NSMutableArray *tableDataSource;
 
-
 @end
-
-static BOOL startup = YES;
 
 @implementation ViewController
 @synthesize managedObjectContext = _managedObjectContext;
@@ -32,19 +26,6 @@ static BOOL startup = YES;
 {
     [super viewDidLoad];
     self.searchBar.delegate = self;
-    
-    /*
-    self.stack = [CoreDataStack coreDataStackWithModelName:@"CodeSampleDataModel"];
-    NSEntityDescription* entityDesc = [self.stack entityForClass:[_tableData class]];
-    
-    NSManagedObject *mo = [NSEntityDescription insertNewObjectForEntityForName:@"TableData"
-                                                        inManagedObjectContext:self.stack.managedObjectContext];
-   // [mo setValue:@"doog" forKey:@"headlines"];
-   // id aValue=[mo valueForKey:@"aKeyName"];
-
-   NSDictionary *attributes = [[mo entity] attributesByName];
-    */
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self refreshDataOnStartup:YES];
@@ -88,6 +69,19 @@ static BOOL startup = YES;
     return newCell;
 }
 
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.data.titlesAndThumbnails count];
+}
+
+#pragma mark UITableViewDelegate
+
+
+
+#pragma mark Helper Methods
+
 -(void) loadFromURL: (NSURL*) url toImageView:(UIImageView *)imageView withIndicator:(UIActivityIndicatorView *)indicator
 {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
@@ -101,26 +95,12 @@ static BOOL startup = YES;
     });
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.data.titlesAndThumbnails count];
-}
-
-#pragma mark UITableViewDelegate
-
-// TODO:
-
-#pragma mark Helper Methods
-
 - (void)refreshDataOnStartup:(BOOL)startup
 {
     self.data = [[DataLoader alloc] dataLoaderWithDelegate:self];
     NSString *searchTextConcatonatedWithUnderscores = [self.searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     self.data.searchTerm=searchTextConcatonatedWithUnderscores;
     [self.data getDataAndupdateTableView:self.tableView onStartup:startup];
-    
-    
-    //[self.tableView reloadData];
     
 }
 
@@ -139,7 +119,6 @@ static BOOL startup = YES;
 
 
 }
-
 
 #pragma mark Delegate Methods
 

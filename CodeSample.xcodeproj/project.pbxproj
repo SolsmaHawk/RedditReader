@@ -134,6 +134,33 @@
 			name = DataModel;
 			sourceTree = "<group>";
 		};
+		317E1F261AD8AF770008DF6B /* CoreDataHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				317E1F091AD896C30008DF6B /* CoreDataManager.h */,
+				317E1F0A1AD896C30008DF6B /* CoreDataManager.m */,
+				317E1F0B1AD896C30008DF6B /* NSManagedObject+ActiveRecord.h */,
+				317E1F0C1AD896C30008DF6B /* NSManagedObject+ActiveRecord.m */,
+				317E1F0D1AD896C30008DF6B /* NSManagedObject+Mappings.h */,
+				317E1F0E1AD896C30008DF6B /* NSManagedObject+Mappings.m */,
+				317E1F0F1AD896C30008DF6B /* ObjectiveRecord.h */,
+				317E1F131AD896CD0008DF6B /* NSArray+ObjectiveSugar.h */,
+				317E1F141AD896CD0008DF6B /* NSArray+ObjectiveSugar.m */,
+				317E1F151AD896CD0008DF6B /* NSDictionary+ObjectiveSugar.h */,
+				317E1F161AD896CD0008DF6B /* NSDictionary+ObjectiveSugar.m */,
+				317E1F171AD896CD0008DF6B /* NSMutableArray+ObjectiveSugar.h */,
+				317E1F181AD896CD0008DF6B /* NSMutableArray+ObjectiveSugar.m */,
+				317E1F191AD896CD0008DF6B /* NSNumber+ObjectiveSugar.h */,
+				317E1F1A1AD896CD0008DF6B /* NSNumber+ObjectiveSugar.m */,
+				317E1F1B1AD896CD0008DF6B /* NSSet+ObjectiveSugar.h */,
+				317E1F1C1AD896CD0008DF6B /* NSSet+ObjectiveSugar.m */,
+				317E1F1D1AD896CD0008DF6B /* NSString+ObjectiveSugar.h */,
+				317E1F1E1AD896CD0008DF6B /* NSString+ObjectiveSugar.m */,
+				317E1F1F1AD896CD0008DF6B /* ObjectiveSugar.h */,
+			);
+			name = CoreDataHelpers;
+			sourceTree = "<group>";
+		};
 		E06351FF19056E63004932A4 = {
 			isa = PBXGroup;
 			children = (
@@ -169,26 +196,7 @@
 		E063521119056E63004932A4 /* CodeSample */ = {
 			isa = PBXGroup;
 			children = (
-				317E1F091AD896C30008DF6B /* CoreDataManager.h */,
-				317E1F0A1AD896C30008DF6B /* CoreDataManager.m */,
-				317E1F0B1AD896C30008DF6B /* NSManagedObject+ActiveRecord.h */,
-				317E1F0C1AD896C30008DF6B /* NSManagedObject+ActiveRecord.m */,
-				317E1F0D1AD896C30008DF6B /* NSManagedObject+Mappings.h */,
-				317E1F0E1AD896C30008DF6B /* NSManagedObject+Mappings.m */,
-				317E1F0F1AD896C30008DF6B /* ObjectiveRecord.h */,
-				317E1F131AD896CD0008DF6B /* NSArray+ObjectiveSugar.h */,
-				317E1F141AD896CD0008DF6B /* NSArray+ObjectiveSugar.m */,
-				317E1F151AD896CD0008DF6B /* NSDictionary+ObjectiveSugar.h */,
-				317E1F161AD896CD0008DF6B /* NSDictionary+ObjectiveSugar.m */,
-				317E1F171AD896CD0008DF6B /* NSMutableArray+ObjectiveSugar.h */,
-				317E1F181AD896CD0008DF6B /* NSMutableArray+ObjectiveSugar.m */,
-				317E1F191AD896CD0008DF6B /* NSNumber+ObjectiveSugar.h */,
-				317E1F1A1AD896CD0008DF6B /* NSNumber+ObjectiveSugar.m */,
-				317E1F1B1AD896CD0008DF6B /* NSSet+ObjectiveSugar.h */,
-				317E1F1C1AD896CD0008DF6B /* NSSet+ObjectiveSugar.m */,
-				317E1F1D1AD896CD0008DF6B /* NSString+ObjectiveSugar.h */,
-				317E1F1E1AD896CD0008DF6B /* NSString+ObjectiveSugar.m */,
-				317E1F1F1AD896CD0008DF6B /* ObjectiveSugar.h */,
+				317E1F261AD8AF770008DF6B /* CoreDataHelpers */,
 				317E1ED01AD88B980008DF6B /* DataModel */,
 				319F07EF1AD85E63003865DE /* AppDelegate.h */,
 				319F07F01AD85E63003865DE /* AppDelegate.m */,
