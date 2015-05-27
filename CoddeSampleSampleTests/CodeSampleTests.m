@@ -2,8 +2,7 @@
 //  CodeSampleTests.m
 //  CodeSampleTests
 //
-//  Copyright (c) 2014 Golden Frog, Inc. All rights reserved.
-//
+
 
 #import <XCTest/XCTest.h>
 

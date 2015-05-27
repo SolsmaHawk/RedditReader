@@ -2,8 +2,7 @@
 //  DataLoader.m
 //  CodeSample
 //  Edited by: John Solsma
-//  Copyright (c) 2014 Golden Frog, Inc. All rights reserved.
-//
+
 
 #import "DataLoader.h"
 #import "LoadCounter.h"
