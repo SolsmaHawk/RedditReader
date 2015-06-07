@@ -166,7 +166,7 @@
 		E06351FF19056E63004932A4 = {
 			isa = PBXGroup;
 			children = (
-				E063521119056E63004932A4 /* CodeSample */,
+				E063521119056E63004932A4 /* RedditReader */,
 				E06352881906BB9A004932A4 /* Protocols */,
 				E063523019056E63004932A4 /* CodeSampleTests */,
 				E063520A19056E63004932A4 /* Frameworks */,
@@ -195,7 +195,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E063521119056E63004932A4 /* CodeSample */ = {
+		E063521119056E63004932A4 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
 				317E1F261AD8AF770008DF6B /* CoreDataHelpers */,
@@ -213,7 +213,7 @@
 				E063522319056E63004932A4 /* Images.xcassets */,
 				E063521219056E63004932A4 /* Supporting Files */,
 			);
-			path = CodeSample;
+			path = RedditReader;
 			sourceTree = "<group>";
 		};
 		E063521219056E63004932A4 /* Supporting Files */ = {
@@ -253,6 +253,7 @@
 				E06352941906D89E004932A4 /* DataReceiver.h */,
 			);
 			name = Protocols;
+			path = RedditReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,8 +498,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CodeSample/RedditReader-Prefix.pch";
-				INFOPLIST_FILE = "CodeSample/RedditReader-Info.plist";
+				GCC_PREFIX_HEADER = "RedditReader/RedditReader-Prefix.pch";
+				INFOPLIST_FILE = "RedditReader/RedditReader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RedditReader;
 				WRAPPER_EXTENSION = app;
@@ -511,8 +512,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CodeSample/RedditReader-Prefix.pch";
-				INFOPLIST_FILE = "CodeSample/RedditReader-Info.plist";
+				GCC_PREFIX_HEADER = "RedditReader/RedditReader-Prefix.pch";
+				INFOPLIST_FILE = "RedditReader/RedditReader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RedditReader;
 				WRAPPER_EXTENSION = app;
@@ -529,7 +530,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CodeSample/RedditReader-Prefix.pch";
+				GCC_PREFIX_HEADER = "RedditReader/RedditReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -551,7 +552,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CodeSample/RedditReader-Prefix.pch";
+				GCC_PREFIX_HEADER = "RedditReader/RedditReader-Prefix.pch";
 				INFOPLIST_FILE = "CodeSampleTests/RedditReaderTests-Info.plist";
 				PRODUCT_NAME = RedditReaderTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
