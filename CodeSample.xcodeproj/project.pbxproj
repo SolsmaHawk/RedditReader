@@ -83,20 +83,20 @@
 		319F07F71AD85E63003865DE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		319F07F81AD85E63003865DE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		31F1F43C1AD96F540023EB87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E063520819056E63004932A4 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E063520819056E63004932A4 /* CodeSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E063520B19056E63004932A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E063520D19056E63004932A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E063520F19056E63004932A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E063521319056E63004932A4 /* RedditReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RedditReader-Info.plist"; sourceTree = "<group>"; };
+		E063521319056E63004932A4 /* CodeSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CodeSample-Info.plist"; sourceTree = "<group>"; };
 		E063521519056E63004932A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E063522319056E63004932A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E063522919056E63004932A4 /* RedditReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E063522919056E63004932A4 /* CodeSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E063522A19056E63004932A4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E063523219056E63004932A4 /* RedditReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RedditReaderTests-Info.plist"; sourceTree = "<group>"; };
+		E063523219056E63004932A4 /* CodeSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CodeSampleTests-Info.plist"; sourceTree = "<group>"; };
 		E063523419056E63004932A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E063523619056E63004932A4 /* CodeSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeSampleTests.m; sourceTree = "<group>"; };
 		E06352841905A5FF004932A4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E06352861905A60D004932A4 /* RedditReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RedditReader-Prefix.pch"; path = "CodeSample/RedditReader-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		E06352861905A60D004932A4 /* CodeSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CodeSample-Prefix.pch"; path = "CodeSample/CodeSample-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		E06352871906BB8C004932A4 /* LoadCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadCounter.h; path = CodeSample/LoadCounter.h; sourceTree = "<group>"; };
 		E06352911906C3C0004932A4 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = SOURCE_ROOT; };
 		E06352941906D89E004932A4 /* DataReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataReceiver.h; path = CodeSample/DataReceiver.h; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 		E063520919056E63004932A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E063520819056E63004932A4 /* RedditReader.app */,
-				E063522919056E63004932A4 /* RedditReaderTests.xctest */,
+				E063520819056E63004932A4 /* CodeSample.app */,
+				E063522919056E63004932A4 /* CodeSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			children = (
 				E06352911906C3C0004932A4 /* README.rtf */,
 				E06352841905A5FF004932A4 /* main.m */,
-				E063521319056E63004932A4 /* RedditReader-Info.plist */,
+				E063521319056E63004932A4 /* CodeSample-Info.plist */,
 				E063521419056E63004932A4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -239,8 +239,8 @@
 		E063523119056E63004932A4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E06352861905A60D004932A4 /* RedditReader-Prefix.pch */,
-				E063523219056E63004932A4 /* RedditReaderTests-Info.plist */,
+				E06352861905A60D004932A4 /* CodeSample-Prefix.pch */,
+				E063523219056E63004932A4 /* CodeSampleTests-Info.plist */,
 				E063523319056E63004932A4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -258,9 +258,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E063520719056E63004932A4 /* RedditReader */ = {
+		E063520719056E63004932A4 /* CodeSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E063523A19056E63004932A4 /* Build configuration list for PBXNativeTarget "RedditReader" */;
+			buildConfigurationList = E063523A19056E63004932A4 /* Build configuration list for PBXNativeTarget "CodeSample" */;
 			buildPhases = (
 				E063520419056E63004932A4 /* Sources */,
 				E063520519056E63004932A4 /* Frameworks */,
@@ -270,14 +270,14 @@
 			);
 			dependencies = (
 			);
-			name = RedditReader;
+			name = CodeSample;
 			productName = CodeSample;
-			productReference = E063520819056E63004932A4 /* RedditReader.app */;
+			productReference = E063520819056E63004932A4 /* CodeSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E063522819056E63004932A4 /* RedditReaderTests */ = {
+		E063522819056E63004932A4 /* CodeSampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E063523D19056E63004932A4 /* Build configuration list for PBXNativeTarget "RedditReaderTests" */;
+			buildConfigurationList = E063523D19056E63004932A4 /* Build configuration list for PBXNativeTarget "CodeSampleTests" */;
 			buildPhases = (
 				E063522519056E63004932A4 /* Sources */,
 				E063522619056E63004932A4 /* Frameworks */,
@@ -288,9 +288,9 @@
 			dependencies = (
 				E063522F19056E63004932A4 /* PBXTargetDependency */,
 			);
-			name = RedditReaderTests;
+			name = CodeSampleTests;
 			productName = CodeSampleTests;
-			productReference = E063522919056E63004932A4 /* RedditReaderTests.xctest */;
+			productReference = E063522919056E63004932A4 /* CodeSampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -300,14 +300,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "";
+				ORGANIZATIONNAME = "Golden Frog, Inc.";
 				TargetAttributes = {
 					E063522819056E63004932A4 = {
 						TestTargetID = E063520719056E63004932A4;
 					};
 				};
 			};
-			buildConfigurationList = E063520319056E63004932A4 /* Build configuration list for PBXProject "RedditReader" */;
+			buildConfigurationList = E063520319056E63004932A4 /* Build configuration list for PBXProject "CodeSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -320,8 +320,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E063520719056E63004932A4 /* RedditReader */,
-				E063522819056E63004932A4 /* RedditReaderTests */,
+				E063520719056E63004932A4 /* CodeSample */,
+				E063522819056E63004932A4 /* CodeSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -386,7 +386,7 @@
 /* Begin PBXTargetDependency section */
 		E063522F19056E63004932A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E063520719056E63004932A4 /* RedditReader */;
+			target = E063520719056E63004932A4 /* CodeSample */;
 			targetProxy = E063522E19056E63004932A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -497,10 +497,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RedditReader-Prefix.pch";
-				INFOPLIST_FILE = "CodeSample/RedditReader-Info.plist";
+				GCC_PREFIX_HEADER = "CodeSample/CodeSample-Prefix.pch";
+				INFOPLIST_FILE = "CodeSample/CodeSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = RedditReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -511,10 +511,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RedditReader-Prefix.pch";
-				INFOPLIST_FILE = "CodeSample/RedditReader-Info.plist";
+				GCC_PREFIX_HEADER = "CodeSample/CodeSample-Prefix.pch";
+				INFOPLIST_FILE = "CodeSample/CodeSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = RedditReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -529,13 +529,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RedditReader-Prefix.pch";
+				GCC_PREFIX_HEADER = "CodeSample/CodeSample-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CodeSampleTests/RedditReaderTests-Info.plist";
-				PRODUCT_NAME = RedditReaderTests;
+				INFOPLIST_FILE = "CodeSampleTests/CodeSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -551,9 +551,9 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RedditReader-Prefix.pch";
-				INFOPLIST_FILE = "CodeSampleTests/RedditReaderTests-Info.plist";
-				PRODUCT_NAME = RedditReaderTests;
+				GCC_PREFIX_HEADER = "CodeSample/CodeSample-Prefix.pch";
+				INFOPLIST_FILE = "CodeSampleTests/CodeSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -562,7 +562,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E063520319056E63004932A4 /* Build configuration list for PBXProject "RedditReader" */ = {
+		E063520319056E63004932A4 /* Build configuration list for PBXProject "CodeSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E063523819056E63004932A4 /* Debug */,
@@ -571,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E063523A19056E63004932A4 /* Build configuration list for PBXNativeTarget "RedditReader" */ = {
+		E063523A19056E63004932A4 /* Build configuration list for PBXNativeTarget "CodeSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E063523B19056E63004932A4 /* Debug */,
@@ -580,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E063523D19056E63004932A4 /* Build configuration list for PBXNativeTarget "RedditReaderTests" */ = {
+		E063523D19056E63004932A4 /* Build configuration list for PBXNativeTarget "CodeSampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E063523E19056E63004932A4 /* Debug */,

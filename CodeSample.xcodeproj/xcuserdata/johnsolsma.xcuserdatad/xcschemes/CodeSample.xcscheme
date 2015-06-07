@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E063520719056E63004932A4"
-               BuildableName = "RedditReader.app"
-               BlueprintName = "RedditReader"
-               ReferencedContainer = "container:RedditReader.xcodeproj">
+               BuildableName = "CodeSample.app"
+               BlueprintName = "CodeSample"
+               ReferencedContainer = "container:CodeSample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E063522819056E63004932A4"
-               BuildableName = "RedditReaderTests.xctest"
-               BlueprintName = "RedditReaderTests"
-               ReferencedContainer = "container:RedditReader.xcodeproj">
+               BuildableName = "CodeSampleTests.xctest"
+               BlueprintName = "CodeSampleTests"
+               ReferencedContainer = "container:CodeSample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E063522819056E63004932A4"
-               BuildableName = "RedditReaderTests.xctest"
-               BlueprintName = "RedditReaderTests"
-               ReferencedContainer = "container:RedditReader.xcodeproj">
+               BuildableName = "CodeSampleTests.xctest"
+               BlueprintName = "CodeSampleTests"
+               ReferencedContainer = "container:CodeSample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E063520719056E63004932A4"
-            BuildableName = "RedditReader.app"
-            BlueprintName = "RedditReader"
-            ReferencedContainer = "container:RedditReader.xcodeproj">
+            BuildableName = "CodeSample.app"
+            BlueprintName = "CodeSample"
+            ReferencedContainer = "container:CodeSample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E063520719056E63004932A4"
-            BuildableName = "RedditReader.app"
-            BlueprintName = "RedditReader"
-            ReferencedContainer = "container:RedditReader.xcodeproj">
+            BuildableName = "CodeSample.app"
+            BlueprintName = "CodeSample"
+            ReferencedContainer = "container:CodeSample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E063520719056E63004932A4"
-            BuildableName = "RedditReader.app"
-            BlueprintName = "RedditReader"
-            ReferencedContainer = "container:RedditReader.xcodeproj">
+            BuildableName = "CodeSample.app"
+            BlueprintName = "CodeSample"
+            ReferencedContainer = "container:CodeSample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
