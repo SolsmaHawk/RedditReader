@@ -1,1 +1,26 @@
+Reddit Reader - Submission by: John Solsma
 
+- Interface Builder
+		-added UITextField with search activity indicator to show that search query is loading
+		-added UIImageView to GFTableViewCell for thumbnail image
+		-Added necessary constraints to UI items to insure cross-comparability across different devices and no ambiguity.
+
+-Core Data
+	-Added “Objective Record” a Core Data helper library to avoid messy boiler-plate code in the AppDelegate.
+	-Created Data Model for persistently storing latest Reddit queries.
+	-CoreData is managed from within the Data Loader class
+	- Cache most recent results and clear older results
+ 
+-Data Loader
+		-Added search bar text retrieval + concatenated input spaces with underscores to insure a valid query.
+		-Updated DataLoader to load data asynchronously.
+		-Stored queries using Core Data - automatically load from cache on app start-up.
+
+-Misc
+		-compiles for both 32 and 64-bit with no errors or warnings.
+		-added circular activity indicator to asynchronous image loading
+ 	-added first-responder / delegate method for expected UITextField keyboard behavior
+		-Fixed header search paths to search source folder recursively
+		-Confirmed no warnings or errors on Xcode Version 6.3 (6D570)
+		-Changed title label to change font size based on title length to fit container.
+		-Added debugging definitions to Data Loader class
